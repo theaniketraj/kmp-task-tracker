@@ -1,0 +1,25 @@
+[versions]
+kotlin = "1.9.23" 
+ksp = "1.9.23-1.0.19" # Must align with Kotlin version
+coroutines = "1.7.3" # Or "1.8.0" for Kotlin 2.0.0
+room = "2.6.1"
+sqliteFramework = "2.4.0"
+sqliteJdbc = "3.43.0.0" # Or latest
+
+[libraries]
+kotlin-stdlib-common = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-common", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "room" } # For annotations in commonMain if used
+androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "sqliteFramework" }
+sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqliteJdbc" }
+
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+# kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" } # If we add a pure JVM app module
