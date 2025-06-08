@@ -9,8 +9,10 @@ pluginManagement {
     // plugin versions are in the catalog and applied with alias() in root build.gradle.kts
     // For clarity, explicitly defining them here with 'apply false' is also fine.
     plugins {
-        id("org.jetbrains.kotlin.multiplatform") version "1.9.23" apply false
-        id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
+        // id("org.jetbrains.kotlin.multiplatform") version "1.9.23" apply false
+        // id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
+        id("org.jetbrains.kotlin.multiplatform") version libs.versions.kotlin.get() apply false
+        id("com.google.devtools.ksp") version libs.versions.ksp.get() apply false
         // id("org.jetbrains.kotlin.jvm") version libs.versions.kotlin.get() apply false // If needed
     }
 }
