@@ -1,3 +1,4 @@
+enableFeaturePreview("VERSION_CATALOGS")
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -11,8 +12,8 @@ pluginManagement {
     plugins {
         // id("org.jetbrains.kotlin.multiplatform") version "1.9.23" apply false
         // id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
-        id("org.jetbrains.kotlin.multiplatform") version libs.versions.kotlin.get() apply false
-        id("com.google.devtools.ksp") version libs.versions.ksp.get() apply false
+        id("org.jetbrains.kotlin.multiplatform") version "1.9.23" apply false
+        id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
         // id("org.jetbrains.kotlin.jvm") version libs.versions.kotlin.get() apply false // If needed
     }
 }
