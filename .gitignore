@@ -70,3 +70,4 @@ secrets.json
 # only want to commit the source for them.
 # Example:
 # /karl-example-desktop/build/compose/binaries/
+build/reports/problems/problems-report.html
