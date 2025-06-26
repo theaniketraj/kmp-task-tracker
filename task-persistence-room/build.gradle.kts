@@ -1,12 +1,15 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.ksp) // Apply KSP plugin for Room code generation
+    // alias(libs.plugins.ksp) // Apply KSP plugin for Room code generation
+    id("com.google.devtools.ksp") version "1.9.23-1.0.19" // KSP version compatible with Kotlin 1.8
 }
+
+val roomVersion: String = "2.6.1" // Room version defined in root build.gradle.kts
 
 kotlin {
     jvm { // This module provides a JVM implementation using Room
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of(8)) // Set Java 8 compatibility
         }
     }
     // No other targets for this specific persistence module for now
@@ -33,7 +36,7 @@ kotlin {
                 implementation(libs.sqlite.jdbc)
 
                 // KSP processor for Room on the JVM target
-                kspJvm(libs.androidx.room.compiler)
+                ksp(libs.androidx.room.compiler)
             }
         }
     }
