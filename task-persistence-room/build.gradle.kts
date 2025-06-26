@@ -36,7 +36,8 @@ kotlin {
                 implementation(libs.sqlite.jdbc)
 
                 // KSP processor for Room on the JVM target
-                ksp(libs.androidx.room.compiler)
+                //ksp(libs.androidx.room.compiler)
+                implementation(libs.androidx.room.compiler) // Use implementation instead of ksp for runtime
             }
         }
     }
